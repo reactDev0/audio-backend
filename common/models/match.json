@@ -1,0 +1,31 @@
+{
+  "name": "Match",
+  "plural": "Matches",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "playlist": {
+      "type": "belongsTo",
+      "model": "Playlist",
+      "foreignKey": "playlistId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "song": {
+      "type": "belongsTo",
+      "model": "Song",
+      "foreignKey": "songId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

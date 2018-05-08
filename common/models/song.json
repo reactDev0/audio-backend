@@ -1,0 +1,56 @@
+{
+  "name": "Song",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Untitled"
+    },
+    "artist": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "album": {
+      "type": "string"
+    },
+    "year": {
+      "type": "date"
+    },
+    "number": {
+      "type": "number"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "length": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "playlists": {
+      "type": "hasMany",
+      "model": "Playlist",
+      "foreignKey": "songId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Match"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

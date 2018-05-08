@@ -1,0 +1,32 @@
+{
+  "name": "Playlist",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "Untitled"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "songs": {
+      "type": "hasMany",
+      "model": "Song",
+      "foreignKey": "playlistId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Match"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
